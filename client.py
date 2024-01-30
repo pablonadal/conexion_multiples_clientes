@@ -32,7 +32,7 @@ def run_client(userName):
     def write_messages():
         while True:
             writedMessage = input("")
-            if writedMessage == "QQ":
+            if writedMessage == "close":
                 client.close()
                 break
             else:
