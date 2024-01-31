@@ -2,6 +2,7 @@ import socket, threading
 from main import main
 from time import sleep
 from constants import *
+from filter import censor_insults
 
 def run_client(userName):
     host = "127.0.0.1"
@@ -31,7 +32,7 @@ def run_client(userName):
 
     def write_messages():
         while True:
-            writedMessage = input("")
+            writedMessage = censor_insults(input(""))
             if writedMessage == "close":
                 client.close()
                 break
